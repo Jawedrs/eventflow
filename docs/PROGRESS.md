@@ -172,7 +172,8 @@ out broader ticket options and release readiness checks.
 
 ## Milestone 12 — Local WordPress integration smoke check
 
-Status: activation and archive verified; booking lifecycle still pending
+Status: activation, archive, single event, and free reservation verified;
+organizer flows verified; paid-booking flows pending
 
 - Moved the development project into the Local WordPress site's plugin folder
   at `wp-content/plugins/eventflow`.
@@ -180,10 +181,18 @@ Status: activation and archive verified; booking lifecycle still pending
   schema, including payment and refund reference columns, was created.
 - Confirmed the event post type and booking lookup shortcode register, and the
   public `/events/` archive returns HTTP 200 with the themed empty state.
-- Single-event rendering with a real event record, reservation, organizer
-  permissions, and Stripe test-mode payment/refund flows still need exercise.
+- Confirmed the single-event template renders event details, booking form, and
+  Event JSON-LD; its public route returned HTTP 200 with the public stylesheet.
+- Completed a free reservation through the public admin-post handler, saw the
+  confirmation reference, and verified capacity decremented atomically.
+- Removed the temporary smoke-check event and booking after verification.
+- Verified organizer dashboard event creation assigns the organizer as author,
+  preserves event schedule/capacity, and allows editing only of their own event.
+- Verified organizer CSV exports include owned-event attendees only, while
+  administrator exports include both owners; formula-leading attendee values
+  are escaped. Removed all temporary users, events, and bookings afterward.
+- Stripe test-mode payment/refund flows still need exercise.
 
 ## Next milestone
 
-Validate the single-event page and free booking on this local install, then
-exercise organizer permissions and Stripe test mode before release work.
+Test Stripe payment and refund behavior in test mode before release work.
