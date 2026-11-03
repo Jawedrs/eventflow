@@ -1,0 +1,21 @@
+{
+  "apiVersion": 3,
+  "name": "eventflow/event-list",
+  "title": "EventFlow events",
+  "category": "widgets",
+  "icon": "tickets-alt",
+  "description": "Display published events in date order.",
+  "textdomain": "eventflow",
+  "attributes": {
+    "count": {
+      "type": "number",
+      "default": 6
+    },
+    "category": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:../../assets/build/event-list.js",
+  "style": "file:../../assets/css/public.css"
+}
