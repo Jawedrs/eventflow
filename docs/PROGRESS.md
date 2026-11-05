@@ -192,6 +192,9 @@ organizer flows verified; paid-booking flows pending
   administrator exports include both owners; formula-leading attendee values
   are escaped. Removed all temporary users, events, and bookings afterward.
 - Stripe test-mode payment/refund flows still need exercise.
+- A failed local mock-test harness reset EventFlow settings to the USD default;
+  the previous option value was not recoverable. Do not alter payment settings
+  further until the owner confirms or restores any desired Stripe configuration.
 
 ## Next milestone
 
